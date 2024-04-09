@@ -1,38 +1,38 @@
 function setup() {
-    createCanvas(500,400);
-    mouseClicked();
-  };
+  createCanvas(500,400);
+  mouseClicked();
+};
 
-  var vinder = 0;
-  var moleX;
-  var moleY;
+var vinder = 0;
+var moleX;
+var moleY;
 
- 
-        
+
+      
 // Sleep Function er hvormeget den søver indtil næste molen skal viderer
-  function sleep(milliseconds) {
+function sleep(milliseconds) {
 
-    var start = new Date().getTime();
-    for (var i = 0; i < 1e7; i++) { // 1e7 står for 1 og 7 nul taller
-      if ((new Date().getTime() - start) > milliseconds){
-        break;
-      }
+  var start = new Date().getTime();
+  for (var i = 0; i < 1e7; i++) { // 1e7 står for 1 og 7 nul taller
+    if ((new Date().getTime() - start) > milliseconds){
+      break;
     }
   }
+}
 
-  
 
-  
+
+
 function mouseClicked() {
 
-  var distance = int(dist(mouseX, mouseY, moleX, moleY));
-  
-    if (distance<=50) {
-      console.log("mole trykket")
-      vinder = vinder+1;
-      console.log(vinder)
+var distance = int(dist(mouseX, mouseY, moleX, moleY));
 
-    }
+  if (distance<=50) {
+    console.log("mole trykket")
+    vinder = vinder+1;
+    console.log(vinder)
+
+  }
 
 
 }
@@ -40,14 +40,14 @@ function draw() {
 
 
 
- var possibleX = [115,215,315];
- var possibleY = [115,215,315];
+var possibleX = [115,215,315];
+var possibleY = [115,215,315];
 
-  moleX = random(possibleX);
-  moleY = random(possibleY);
- // console.log(possibleX);
+moleX = random(possibleX);
+moleY = random(possibleY);
+// console.log(possibleX);
 //  console.log(possibleY);
- // console.log("-------")
+// console.log("-------")
 
 
 background(255,255,255);
@@ -90,5 +90,4 @@ ellipse(moleX,moleY,20,20);
 sleep(500)
 
 };
-  
 
