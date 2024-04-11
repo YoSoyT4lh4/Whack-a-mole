@@ -8,11 +8,13 @@ var moleX;
 var moleY;
 var start;
 var moletid = 900; // Tid mellem mole bevægelser
+var tegnemole = true;
 
 function mouseClicked() {
   var distance = int(dist(mouseX, mouseY, moleX, moleY));
-  if (distance <= 50) {
+  if (distance <= 50 && tegnemole) {
     console.log("mole trykket");
+    tegnemole = false;
     vinder = vinder + 1;
     console.log(vinder);
   }
@@ -49,12 +51,16 @@ function draw() {
     start = millis();
   }
 
-  // Opret mole
-  fill(203, 203, 65);
-  ellipse(moleX, moleY, 20, 20);
+  // tegne mole
+  if (tegnemole){
+    fill(203, 203, 65);
+    ellipse(moleX, moleY, 20, 20);
+  }
+  
 }
 
 function moveMole() {
+  tegnemole = random ()> 0.5 ? true:false
   var possibleX = [115, 215, 315];
   var possibleY = [115, 215, 315];
   moleX = random(possibleX);
