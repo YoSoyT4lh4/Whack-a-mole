@@ -66,3 +66,9 @@ function moveMole() {
   moleX = random(possibleX);
   moleY = random(possibleY);
 }
+
+document.addEventListener("DOMContentLoaded", function() {
+  setTimeout(function() {
+    document.querySelector('.introduktion-container').style.display = 'none';
+  }, 3000); // Her kan vi juster forsinkelsen (i millisekunder) for splash skærmen
+});

@@ -1,15 +1,27 @@
-.home {
-
-    align-content: center;
-
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  overflow: hidden;
 }
 
-.body {
+.introduktion-container {
+  background-color: #333;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
 
-    width: 70%;
-    height: 70%;
-    margin-left: 15%;
-    margin-top: 15%;
-    color: #02832f;
-
-};
+.introduktion-indhold {
+    text-align: center;
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+  }
+  
+  @keyframes fadeIn {
+    0% { opacity: 0; transform: translateY(-50px); }
+    100% { opacity: 1; transform: translateY(0); }
+  }
+  
